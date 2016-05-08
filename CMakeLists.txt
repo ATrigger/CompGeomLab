@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.2)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -std=c++11")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -std=c++11 -lpthread")
 
 if (GMP_INCLUDE_DIR AND GMP_LIBRARIES)
     # Already in cache, be silent
@@ -21,3 +21,4 @@ INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIR} ${GMP_INCLUDE_DIR} )
 ADD_EXECUTABLE( main main.cpp )
 ADD_EXECUTABLE( hull hull.cpp )
 TARGET_LINK_LIBRARIES( main ${Boost_LIBRARIES} ${GMP_LIBRARIES} )
+ADD_EXECUTABLE( segments segments.cpp)
